@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <!-- Use a valid TargetFramework that is supported by Azure Functions v4 -->
-    <!-- Recommended options are net6.0, net7.0, or net8.0 -->
     <TargetFramework>net8.0</TargetFramework>
     
     <!-- This specifies the version of the Azure Functions runtime. -->
@@ -18,7 +17,10 @@
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.21.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.17.0" />
     
-    <!-- This package is required to enable the worker to start. -->
+    <!-- This package is needed for HttpTrigger, HttpRequest, and IActionResult -->
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+
+    <!-- These packages are required for the worker to start and for logging -->
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.22.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
   </ItemGroup>
