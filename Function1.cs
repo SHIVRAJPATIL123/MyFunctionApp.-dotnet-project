@@ -15,6 +15,7 @@ namespace MyFunctionApp
         }
 
         // The HttpTrigger attribute and AuthorizationLevel are defined in the Microsoft.Azure.Functions.Worker namespace.
+        // The HttpRequest and IActionResult types are from the ASP.NET Core libraries.
         [Function("Function1")]
         public IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
         {
